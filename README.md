@@ -2,14 +2,13 @@
 
 These are my study notes for multi-threaded, multi-core and async Python.
 
-## Proposed contents
+## Contents
 
-It should cover:
-
-- Locks
-- Async
-- Threading
-- Multiprocess
+* [Data structures](data_structures.md)
+* [Non-blocking and async](async.md)
+* [Threads](threads.md)
+* [Processes](processes.md)
+* [Common patterns](patterns.md)
 
 ## Motivation
 
