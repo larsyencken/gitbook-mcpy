@@ -1,0 +1,470 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Select | Concurrency in Python</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../async/asyncio.html" />
+    
+    
+    <link rel="prev" href="../async.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Tue Jan 19 2016 21:07:43 GMT+0100 (CET)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="data_structures.html">
+            
+                
+                    <a href="../data_structures.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Data structures
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="data_structures/atomic.html">
+            
+                
+                    <a href="../data_structures/atomic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Atomic operations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="data_structures/controlling.html">
+            
+                
+                    <a href="../data_structures/controlling.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Controlling access
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="data_structures/coordinating.html">
+            
+                
+                    <a href="../data_structures/coordinating.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Coordinating
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="data_structures/queues.html">
+            
+                
+                    <a href="../data_structures/queues.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Queues
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="async.html">
+            
+                
+                    <a href="../async.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Non-blocking and async
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="async/select.html">
+            
+                
+                    <a href="../async/select.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Select
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="async/asyncio.html">
+            
+                
+                    <a href="../async/asyncio.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Asyncio
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="async/twisted.html">
+            
+                
+                    <a href="../async/twisted.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Twisted
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="async/gevent.html">
+            
+                
+                    <a href="../async/gevent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Gevent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="threads.html">
+            
+                
+                    <a href="../threads.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Threads
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="processes.html">
+            
+                
+                    <a href="../processes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Processes
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="futures.html">
+            
+                
+                    <a href="../futures.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Futures
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="patterns.html">
+            
+                
+                    <a href="../patterns.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Common Patterns
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Concurrency in Python</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="select">Select</h1>
+<h2 id="checking-for-readiness">Checking for readiness</h2>
+<p>In many situations, attempting to read or write to a file handle causes us to block until data is available to be returned. Instead of blocking, most operating systems support a non-blocking check if data is available. On Windows this only works for sockets, but on Linux, BSD and Solaris it works on files too.</p>
+<p>In this simple example, we are able to do something else (printing &quot;Nothing&quot;) whilst waiting for input to arrive.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> select
+<span class="hljs-keyword">import</span> sys
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">has_input</span><span class="hljs-params">(f, timeout)</span>:</span>
+    <span class="hljs-string">&quot;Block for up to timeout seconds waiting for input.&quot;</span>
+    <span class="hljs-keyword">return</span> bool(select.select([f], [], [], timeout)[<span class="hljs-number">0</span>])
+
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    <span class="hljs-comment"># print Nothing every second until input arrives</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> has_input(sys.stdin, <span class="hljs-number">1.0</span>):
+        print(<span class="hljs-string">&apos;Nothing&apos;</span>)
+
+    print(<span class="hljs-string">&apos;Something: {}&apos;</span>.format(sys.stdin.readline()), end=<span class="hljs-string">&apos;&apos;</span>)
+</code></pre>
+<p>In each inner loop condition, we are checking if <code>stdin</code> is ready to read from yet.</p>
+<p>The main benefits from select come when we&apos;re dealing with a large number of file descriptors. Queuing up IO takes time, and if we do it in a non-blocking manner we can queue up many more operations with the same CPU capacity.</p>
+<h2 id="using-select">Using select</h2>
+<p>The interface for <code>select()</code> lets you pass in three parameters:</p>
+<ul>
+<li><code>rlist</code>: wait until these are ready to read</li>
+<li><code>wlist</code>: wait until these are ready to write</li>
+<li><code>xlist</code>: wait until these have &quot;exceptional events&quot;</li>
+</ul>
+<p><code>select</code> blocks until one or more file descriptor in one of these three lists meets the conditions specified, returning three matching lists to describe which ones are available.</p>
+<p>Using select means you never waste cycles waiting for one resource to become available whilst another is ready for use, letting us do far more IO operations per cycle than if we simply tried to use each resource sequentially.</p>
+<h2 id="read-more">Read more</h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/select.html" target="_blank">https://docs.python.org/3/library/select.html</a></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../async.html" class="navigation navigation-prev " aria-label="Previous page: Non-blocking and async"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../async/asyncio.html" class="navigation navigation-next " aria-label="Next page: Asyncio"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
