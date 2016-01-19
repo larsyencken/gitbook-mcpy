@@ -20,3 +20,7 @@ edit:
 
 book.pdf: book.json *.md
 	gitbook pdf
+
+deploy:
+	gitbook build .
+	ghp-import _book
