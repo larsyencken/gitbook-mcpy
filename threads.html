@@ -1,461 +1,443 @@
+
 <!DOCTYPE HTML>
-<html lang="en" >
-    
+<html lang="" >
     <head>
-        
+        <title>Threads · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Threads | Concurrency in Python</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.3.0">
+        <meta name="generator" content="GitBook 3.2.0">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+    
         
     
+        
+    
+        
+    
+        
+    
+        
     
 
         
     
     
-    <link rel="next" href="./processes.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="processes.html" />
     
     
-    <link rel="prev" href="./async/gevent.html" />
+    <link rel="prev" href="async/gevent.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book" data-level="3" data-basepath="." data-revision="Tue Jan 19 2016 21:15:46 GMT+0100 (CET)">
-    
-
-<div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
-    <ul class="summary">
-        
-        
-        
-        
-
-        
-
-        
-    
-        <li class="chapter " data-level="0" data-path="index.html">
             
-                
-                    <a href="./index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="data_structures.html">
-            
-                
-                    <a href="./data_structures.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Data structures
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1" data-path="data_structures/atomic.html">
-            
-                
-                    <a href="./data_structures/atomic.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.1.</b>
-                        
-                        Atomic operations
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="data_structures/controlling.html">
-            
-                
-                    <a href="./data_structures/controlling.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.2.</b>
-                        
-                        Controlling access
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="data_structures/coordinating.html">
-            
-                
-                    <a href="./data_structures/coordinating.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.3.</b>
-                        
-                        Coordinating
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="data_structures/queues.html">
-            
-                
-                    <a href="./data_structures/queues.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.4.</b>
-                        
-                        Queues
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="async.html">
-            
-                
-                    <a href="./async.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        Non-blocking and async
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1" data-path="async/select.html">
-            
-                
-                    <a href="./async/select.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                        Select
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="async/asyncio.html">
-            
-                
-                    <a href="./async/asyncio.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                        Asyncio
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="async/twisted.html">
-            
-                
-                    <a href="./async/twisted.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                        Twisted
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4" data-path="async/gevent.html">
-            
-                
-                    <a href="./async/gevent.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                        Gevent
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="3" data-path="threads.html">
-            
-                
-                    <a href="./threads.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        Threads
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="processes.html">
-            
-                
-                    <a href="./processes.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Processes
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="futures.html">
-            
-                
-                    <a href="./futures.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        Futures
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="patterns.html">
-            
-                
-                    <a href="./patterns.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Common Patterns
-                    </a>
-            
-            
-        </li>
-    
-
-
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="data_structures.html">
+            
+                <a href="data_structures.html">
+            
+                    
+                    Data structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data_structures/atomic.html">
+            
+                <a href="data_structures/atomic.html">
+            
+                    
+                    Atomic operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data_structures/controlling.html">
+            
+                <a href="data_structures/controlling.html">
+            
+                    
+                    Controlling access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="data_structures/coordinating.html">
+            
+                <a href="data_structures/coordinating.html">
+            
+                    
+                    Coordinating
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="data_structures/queues.html">
+            
+                <a href="data_structures/queues.html">
+            
+                    
+                    Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="async.html">
+            
+                <a href="async.html">
+            
+                    
+                    Non-blocking and async
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="async/select.html">
+            
+                <a href="async/select.html">
+            
+                    
+                    Select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="async/asyncio.html">
+            
+                <a href="async/asyncio.html">
+            
+                    
+                    Asyncio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="async/twisted.html">
+            
+                <a href="async/twisted.html">
+            
+                    
+                    Twisted
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="async/gevent.html">
+            
+                <a href="async/gevent.html">
+            
+                    
+                    Gevent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="threads.html">
+            
+                <a href="threads.html">
+            
+                    
+                    Threads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="processes.html">
+            
+                <a href="processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="futures.html">
+            
+                <a href="futures.html">
+            
+                    
+                    Futures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="patterns.html">
+            
+                <a href="patterns.html">
+            
+                    
+                    Common Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
 
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header">
-    <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
-    
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
+        
+            <div class="body-inner">
+                
+                    
 
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
+<div class="book-header" role="navigation">
     
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Concurrency in Python</a>
+        <a href="." >Threads</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="threads">Threads</h1>
-<p>Threads are OS-scheduled routines for execution. Unlike async methods, they can be preempted at any time, which can make them more dangerous to work with.</p>
-<h2 id="processes-vs-threads">Processes vs threads</h2>
-<p>A process can have many threads. Threads can communicate between each other more quickly than processes can, and spawning a new thread is cheaper than spawning a new process. But threads cannot run independently of the parent process, whereas processes can.</p>
-<p>In other languages, threads can run concurrently and thus fully make use of a multi-core machine. In Python, and other dynamic languages, there is a global interpreter lock (GIL) that prevents more than one thread running at once.</p>
-<p>Although the GIL prevents multicore pure Python using threads, many C extensions that do cpu-bound work release the GIL whilst they work, providing a work-around in some cases. In other cases, threads are still useful for doing concurrent actions which are not cpu-bound, like IO.</p>
-<h2 id="thread-pools">Thread pools</h2>
-<p>The <code>concurrent.futures</code> module supports futures using threads. Here is one of their examples:</p>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> shutil
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="threads">Threads</h1><p>Threads are OS-scheduled routines for execution. Unlike async methods, they can be preempted at any time, which can make them more dangerous to work with.</p><h2 id="processes-vs-threads">Processes vs threads</h2><p>A process can have many threads. Threads can communicate between each other more quickly than processes can, and spawning a new thread is cheaper than spawning a new process. But threads cannot run independently of the parent process, whereas processes can.</p><p>In other languages, threads can run concurrently and thus fully make use of a multi-core machine. In Python, and other dynamic languages, there is a global interpreter lock (GIL) that prevents more than one thread running at once.</p><p>Although the GIL prevents multicore pure Python using threads, many C extensions that do cpu-bound work release the GIL whilst they work, providing a work-around in some cases. In other cases, threads are still useful for doing concurrent actions which are not cpu-bound, like IO.</p><h2 id="thread-pools">Thread pools</h2><p>The <code>concurrent.futures</code> module supports futures using threads. Here is one of their examples:</p><pre><code class="lang-python"><span class="hljs-keyword">import</span> shutil
 <span class="hljs-keyword">from</span> concurrent <span class="hljs-keyword">import</span> futures
 
 <span class="hljs-keyword">with</span> futures.ThreadPoolExecutor(max_workers=<span class="hljs-number">4</span>) <span class="hljs-keyword">as</span> e:
     e.submit(shutil.copy, <span class="hljs-string">&apos;src1.txt&apos;</span>, <span class="hljs-string">&apos;dest1.txt&apos;</span>)
     e.submit(shutil.copy, <span class="hljs-string">&apos;src2.txt&apos;</span>, <span class="hljs-string">&apos;dest2.txt&apos;</span>)
     e.submit(shutil.copy, <span class="hljs-string">&apos;src3.txt&apos;</span>, <span class="hljs-string">&apos;dest3.txt&apos;</span>)
-    e.submit(shutil.copy, <span class="hljs-string">&apos;src4.txt&apos;</span>, <span class="hljs-string">&apos;dest4.txt&apos;</span>)
-</code></pre>
-<p>The context manager blocks until all the tasks are completed, shutting down the thread pool after.</p>
-<h2 id="spawning-threads">Spawning threads</h2>
-<p>The <code>threading</code> module provides a high-level version of threads.</p>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello_world</span><span class="hljs-params">()</span>:</span>
+    e.submit(shutil.copy, <span class="hljs-string">&apos;src4.txt&apos;</span>, <span class="hljs-string">&apos;dest4.txt&apos;</span>)</code></pre>
+<p>The context manager blocks until all the tasks are completed, shutting down the thread pool after.</p><h2 id="spawning-threads">Spawning threads</h2><p>The <code>threading</code> module provides a high-level version of threads.</p><pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello_world</span><span class="hljs-params">()</span>:</span>
     time.sleep(<span class="hljs-number">3</span>)
     print(<span class="hljs-string">&apos;Hello world!&apos;</span>)
 
 
 t = threading.Thread(target=hello_world)
 t.start()
-t.join()  <span class="hljs-comment"># blocks for 3 seconds</span>
-</code></pre>
+t.join()  <span class="hljs-comment"># blocks for 3 seconds</span></code></pre>
 <p><a href="https://docs.python.org/3.5/library/threading.html" target="_blank">https://docs.python.org/3.5/library/threading.html</a></p>
-
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="./async/gevent.html" class="navigation navigation-prev " aria-label="Previous page: Gevent"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="./processes.html" class="navigation navigation-next " aria-label="Next page: Processes"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
-        
-<script src="gitbook/app.js"></script>
+                        </div>
+                    </div>
+                
+            </div>
 
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+            
+                
+                <a href="async/gevent.html" class="navigation navigation-prev " aria-label="Previous page: Gevent">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="processes.html" class="navigation navigation-next " aria-label="Next page: Processes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Threads","level":"1.4","depth":1,"next":{"title":"Processes","level":"1.5","depth":1,"path":"processes.md","ref":"processes.md","articles":[]},"previous":{"title":"Gevent","level":"1.3.4","depth":2,"path":"async/gevent.md","ref":"async/gevent.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.0","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":10,"fontFamily":"Arial","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"threads.md","mtime":"2016-01-19T20:14:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-15T19:54:29.993Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
-    </body>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
     
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
 </html>
+

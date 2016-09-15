@@ -4,9 +4,11 @@
 
 help:
 	@echo
-	@echo "  make serve     Run a development server."
-	@echo "  make view      Open the dev page in the browser."
-	@echo "  make edit      Open the project in Atom."
+	@echo "  make serve       Run a development server."
+	@echo "  make view        Open the dev page in the browser."
+	@echo "  make edit        Open the project in Atom."
+	@echo "  make deploy      Deploy to gh-pages."
+	@echo "  make view-live   View the live site on Github pages."
 	@echo
 
 serve:
@@ -24,3 +26,7 @@ book.pdf: book.json *.md
 deploy:
 	gitbook build .
 	ghp-import _book
+	git push origin gh-pages
+
+view-live:
+	open http://larsyencken.github.io/gitbook-mcpy/
