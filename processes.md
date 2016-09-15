@@ -1,6 +1,42 @@
 # Processes
 
-Processes can be used for actual cpu-bound parallelism in Python. Use them whenever you have number crunching to do.
+Processes can be used for actual cpu-bound parallelism in Python. Use them whenever you have number crunching to do, or just to avoid the problems of threads.
+
+## Forking
+
+Splits the program into two processes at the point `os.fork()` is called, one parent and one child. This is an old-school mechanism, normally saved for servers.
+
+```python
+import os
+
+print('Prefork:', os.getpid())      # 27102
+
+child_pid = os.fork()
+
+if child_pid == 0:
+    print('Child:', os.getpid())    # 27122
+else:
+    print('Parent:', os.getpid())   # 27102
+```
+
+This is too low-level for most Python applications, use a higher-level abstraction instead.
+
+## Manual management
+
+```python
+from multiprocessing import Process, cpu_count
+
+# start multiple processes
+procs = []
+for i in range(cpu_count()):
+    p = Process(target=do_something_expensive)
+    p.start()
+    procs.append(p)
+
+# wait for all to complete
+for p in procs:
+    p.join()
+```
 
 ## Process pools
 
@@ -33,5 +69,7 @@ with futures.ProcessPoolExecutor(3) as p:
     e.submit(do_something_expensive, 'file2.txt')
     e.submit(do_something_expensive, 'file3.txt')
 ```
+
+Continue to [Futures](/futures.html) to read more.
 
 https://docs.python.org/3.5/library/multiprocessing.html
