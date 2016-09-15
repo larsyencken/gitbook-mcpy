@@ -1,7 +1,7 @@
 {
-	"gitbook": ">=0.3.6",
+	"gitbook": "3.2.0",
 	"pdf": {
-		"fontSize": "10",
+		"fontSize": 10,
 		"paperSize": "a5"
 	},
 	"plugins": [
