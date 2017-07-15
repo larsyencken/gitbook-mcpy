@@ -30,7 +30,7 @@ with futures.ThreadPoolExecutor(max_workers=4) as e:
 ## Process pool
 
 ```python
-import concurrent.futures
+import concurrent.futures as futures
 import math
 
 PRIMES = [
